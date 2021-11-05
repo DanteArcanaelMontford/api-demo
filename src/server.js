@@ -1,7 +1,13 @@
 const express = require("express");
 const routes = require("./routes");
+const db = require("./database");
 
 const app = express();
+
+db.connect();
+
+app.use(express.json);
+app.use(express.urlencoded({ extended: true }));
 
 app.use("/api", routes);
 
