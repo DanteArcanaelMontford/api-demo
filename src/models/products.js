@@ -6,11 +6,11 @@ const productSchema = new mongoose.Schema({
     require: true,
   },
   brand: {
-    type: Number,
+    type: String,
     require: true,
   },
   price: {
-    type: String,
+    type: Number,
     require: true,
   },
   createdAt: {
@@ -20,5 +20,17 @@ const productSchema = new mongoose.Schema({
 });
 
 const Model = mongoose.model("products", productSchema);
+
+// const product1 = new Model({
+//   name: "Product2",
+//   brand: "Brand3",
+//   price: 49.9,
+// });
+
+// product1.save((err) => {
+//   if (err) {
+//     console.error("Error:", err);
+//   }
+// });
 
 module.exports = Model;
