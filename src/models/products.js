@@ -21,16 +21,4 @@ const productSchema = new mongoose.Schema({
 
 const Model = mongoose.model("products", productSchema);
 
-// const product1 = new Model({
-//   name: "Product2",
-//   brand: "Brand3",
-//   price: 49.9,
-// });
-
-// product1.save((err) => {
-//   if (err) {
-//     console.error("Error:", err);
-//   }
-// });
-
 module.exports = Model;
