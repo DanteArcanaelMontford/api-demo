@@ -10,5 +10,5 @@ app.use(express.json());
 
 app.use("/api", routes);
 
-const port = process.env.port || 8090;
+const port = process.env.port || 8091;
 app.listen(port, console.log("Listening on port", port));
