@@ -24,14 +24,27 @@ async function post(req, res) {
       console.error("Error while try to create product:", err);
       return;
     }
+    res.send({
+      created: true,
+    });
+  });
+}
+
+async function put(req, res) {
+  const { id } = req.params;
+
+  const product = await ProductsModel.findOneAndUpdate({ _id: id }, req.body, {
+    new: true,
   });
 
   res.send({
-    created: true,
+    update: "successful",
+    product,
   });
 }
 
 module.exports = {
   get,
   post,
+  put,
 };
